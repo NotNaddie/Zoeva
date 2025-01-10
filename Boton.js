@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 30,
         justifyContent: 'center',
-        alignItems: 'center',
-        transform: [{translateX: 45}, {translateY: 10}],
+        alignItems: 'center'
     },
     TextoBoton: {
         color: 'white',
