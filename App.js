@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
 import Boton from './Boton';
+
 export default function App() {
   return (
     <View style={[{flexDirection: 'column', flex:1}, styles.mainContainer]}>
       <StatusBar style="auto" />
-      <View style={{flex:2}}>
+      <View style={{flex:1}}>
         <Image source={require('./assets/ZoevaLogoL.png')} style={[ styles.LogoZoeva]} />
       </View>
       
-      <View style={[{flex: 1}]}>
+      <View style={[{flex: 2}]}>
         <View style={[{justifyContent: 'space-evenly'}, styles.containerIS]}>
           <Text style={styles.TituloContainerPrincipal}>Log in</Text>
           <TextInput style={styles.TextInputs} placeholder='/User' />
@@ -18,7 +19,6 @@ export default function App() {
         </View>
       </View>
     </View>
-      
   );
 }
 const styles = StyleSheet.create({
@@ -34,24 +34,10 @@ const styles = StyleSheet.create({
     padding: 20,
     width: 310,
     height: 400,
-    shadowOffset: {width: 10, height: 10},
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
     borderRadius: 20,
     marginBottom: 20,
     alignItems:'center',
     alignContent: 'center'
-  },
-  containerPrincipalIS: {
-    backgroundColor: '#3F8674',
-    width: 320,
-    height: 400,
-    borderRadius: 20,
-    marginBottom: 20,
-    shadowColor: '#000000',
-    shadowOffset : {width: 200, height: 10},
-    shadowOpacity: 0.2,
-    shadowRadius: 10
   },
   TextInputs: {
     fontSize: 14,
@@ -73,6 +59,7 @@ const styles = StyleSheet.create({
   } ,
   TituloContainerPrincipal: {
     fontSize: 40,
+    textAlign: 'center',
     fontWeight: 'bold',
     color: '#33566C'
   },
