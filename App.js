@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
 import Boton from './Boton';
+import FadeAnimView from './FadeAnimView';
 
 export default function App() {
   return (
@@ -15,12 +16,21 @@ export default function App() {
           <Text style={styles.TituloContainerPrincipal}>Log in</Text>
           <TextInput style={styles.TextInputs} placeholder='/User' />
           <TextInput style={styles.TextInputs} placeholder='/Password' />
-          <Boton/>
+          <Boton onPress={abrirVentanaMain} />
         </View>
       </View>
     </View>
   );
 }
+
+const estado = 'v';
+
+const abrirVentanaMain = () => {
+  <FadeAnimView fadeInicial={0} fadeFinal={1} duracion={600} >
+    <Text>Tert</Text>
+  </FadeAnimView>
+};
+
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#0F705F',

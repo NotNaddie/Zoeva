@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Boton() {
+export default function Boton(props) {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.onPress} >
             <LinearGradient
                 colors={['#548196', '#6CAACF']}
                 style={styles.Boton}
