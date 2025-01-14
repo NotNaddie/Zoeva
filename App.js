@@ -1,7 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import Boton from './Boton';
 import FadeAnimView from './FadeAnimView';
+
+const abrirVentanaMain = () => {
+  <FadeAnimView fadeInicial = {0} fadeFinal = {1} duracion = {600}><Text style = {styles.TextoBoton}>Jejeje</Text></FadeAnimView>
+};
+
+function PantallaActual(){
+  <PantallaIS/>
+} 
+
+const PantallaIS = () => {
+  <View style={[{flexDirection: 'column', flex:1}, styles.mainContainer]}>
+    <StatusBar style="auto" />
+    <View style={{flex:1}}>
+      <Image source={require('./assets/ZoevaLogoL.png')} style={[ styles.LogoZoeva]} />
+    </View>
+    
+    <View style={[{flex: 2}]}>
+      <View style={[{justifyContent: 'space-evenly'}, styles.containerIS]}>
+        <Text style={styles.TituloContainerPrincipal}>Log in</Text>
+        <TextInput style={styles.TextInputs} placeholder='/User' />
+        <TextInput style={styles.TextInputs} placeholder='/Password' />
+        <Boton onPress={abrirVentanaMain} />
+      </View>
+    </View>
+  </View>
+};
 
 export default function App() {
   return (
@@ -16,7 +43,16 @@ export default function App() {
           <Text style={styles.TituloContainerPrincipal}>Log in</Text>
           <TextInput style={styles.TextInputs} placeholder='/User' />
           <TextInput style={styles.TextInputs} placeholder='/Password' />
-          <Boton onPress={abrirVentanaMain} />
+          <TouchableOpacity onPress={() => abrirVentanaMain()} >
+            <LinearGradient
+              colors={['#548196', '#6CAACF']}
+              style={styles.Boton}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+            >
+              <Text style={styles.TextoBoton}>Sign in</Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -24,12 +60,6 @@ export default function App() {
 }
 
 const estado = 'v';
-
-const abrirVentanaMain = () => {
-  <FadeAnimView fadeInicial={0} fadeFinal={1} duracion={600} >
-    <Text>Tert</Text>
-  </FadeAnimView>
-};
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -73,4 +103,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#33566C'
   },
+  Boton: {
+    width: 230,
+    height: 50,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  TextoBoton: {
+    color: 'white',
+    fontSize: 26,
+    fontWeight: 'bold',
+  }
 });

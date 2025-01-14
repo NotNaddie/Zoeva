@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Animated, useAnimatedValue } from 'react-native';
 
 const FadeAnimView = props => {
@@ -10,10 +10,10 @@ const FadeAnimView = props => {
             duration: props.duracion,
             useNativeDriver: true
         }).start();
-    }, [fadeInicial]);
+    }, [FadeO]);
 
     return(
-        <Animated.View style = {{...props.style, opacity: FadeO}}>
+        <Animated.View style = {{opacity: FadeO}}>
             {props.children}
         </Animated.View>
     );

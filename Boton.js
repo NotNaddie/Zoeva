@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Boton(props) {
     return (
-        <TouchableOpacity onPress={props.onPress} >
+        <TouchableOpacity onPress={props.onP} >
             <LinearGradient
                 colors={['#548196', '#6CAACF']}
                 style={styles.Boton}
