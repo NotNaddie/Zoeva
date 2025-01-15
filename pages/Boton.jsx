@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function Boton(props) {
+const Boton = props => {
     return (
         <TouchableOpacity onPress={props.onP} >
             <LinearGradient
@@ -14,9 +14,11 @@ export default function Boton(props) {
                 <Text style={styles.TextoBoton}>Sign in</Text>
             </LinearGradient>
         </TouchableOpacity>
-    )
+    );
 }
 
+export default Boton;
+export {styles};
 const styles = StyleSheet.create({
     Boton: {
         width: 230,

@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
+import Boton from './Boton';
+import { StyleSheet, Text, View, TextInput, Image} from 'react-native';
 
-const IniciarSesion = () => {
+const IniciarSesion = props => {
     return(
         <View style={[{flexDirection: 'column', flex:1}, styles.mainContainer]}>
             <StatusBar style="auto" />
@@ -14,16 +15,7 @@ const IniciarSesion = () => {
                     <Text style={styles.TituloContainerPrincipal}>Log in</Text>
                     <TextInput style={styles.TextInputs} placeholder='/User' />
                     <TextInput style={styles.TextInputs} placeholder='/Password' />
-                    <TouchableOpacity onPress={() => abrirVentanaMain()} >
-                    <LinearGradient
-                        colors={['#548196', '#6CAACF']}
-                        style={styles.Boton}
-                        start={{ x: 0, y: 0 }}
-                        end={{ x: 1, y: 1 }}
-                    >
-                        <Text style={styles.TextoBoton}>Sign in</Text>
-                    </LinearGradient>
-                    </TouchableOpacity>
+                    <Boton onP={props.AccionBoton}/>
                 </View>
             </View>
         </View>
@@ -31,6 +23,7 @@ const IniciarSesion = () => {
 }
 
 export default IniciarSesion;
+export {styles};
 
 const styles = StyleSheet.create({
     mainContainer: {
