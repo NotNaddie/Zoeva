@@ -1,30 +1,29 @@
-import { View } from 'react-native-web';
-import IniciarSesion, {styles} from './pages/iniciarSesion';
+import IniciarSesion from './pages/iniciarSesion';
+import { createStaticNavigation, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { NavigationContainer } from '@react-navigation/native';
 import Mapa from './pages/mapa';
+import { Text, TouchableOpacity } from 'react-native';
+import './gesture-handler';
 
-const Stack = createNativeStackNavigator();
-const IS = navigation => {
-  return(<IniciarSesion onP={() => {navigation.navigate('Mapa')}}/>)
+const Stack = createNativeStackNavigator({
+  initialRouteName: 'Home',
+  screens: {
+    Home: IS,
+    Mapa: Map,
+  },
+});
+
+function Map(){
+  return(<Mapa TextStyle={{fontSize:30, fontWeight: 'bold', color:'#000000'}}/>)
 }
 
-export default function App({navigation}) {
-  return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Iniciar Sesion"
-          component={IS}
-          options={{cardStyleInterpolator: ({current}) => ({
-            cardStyle: {
-              opacity: current.progress
-            }
-          })}}
-        />
-        <Stack.Screen name='Mapa' component={Mapa}/>
-      </Stack.Navigator>
-    </NavigationContainer>
-    
-  );
+function IS() {
+  const navigation = useNavigation();
+  return(<IniciarSesion AccionBoton={() => navigation.navigate('Mapa')}/>);
+}
+
+const Navigation = createStaticNavigation(Stack);
+
+export default function App() {
+  return <Navigation/>;
 }

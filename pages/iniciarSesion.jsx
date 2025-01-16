@@ -16,6 +16,7 @@ const IniciarSesion = props => {
                     <TextInput style={styles.TextInputs} placeholder='/User' />
                     <TextInput style={styles.TextInputs} placeholder='/Password' />
                     <Boton onP={props.AccionBoton}/>
+                    {props.children}
                 </View>
             </View>
         </View>
