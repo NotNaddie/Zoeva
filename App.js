@@ -5,16 +5,26 @@ import { NavigationContainer } from '@react-navigation/native';
 import Mapa from './pages/mapa';
 
 const Stack = createNativeStackNavigator();
+const IS = navigation => {
+  return(<IniciarSesion onP={() => {navigation.navigate('Mapa')}}/>)
+}
 
-export default function App() {
+export default function App({navigation}) {
   return(
     <NavigationContainer>
-      <Stack.Screen>
-        <IniciarSesion AccionBoton={() => {<Mapa TextStyle={styles.TituloContainerPrincipal}/>}}/>
-      </Stack.Screen>
-      <Stack.Screen>
-        <Mapa/>
-      </Stack.Screen>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Iniciar Sesion"
+          component={IS}
+          options={{cardStyleInterpolator: ({current}) => ({
+            cardStyle: {
+              opacity: current.progress
+            }
+          })}}
+        />
+        <Stack.Screen name='Mapa' component={Mapa}/>
+      </Stack.Navigator>
     </NavigationContainer>
+    
   );
 }
