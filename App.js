@@ -1,5 +1,6 @@
 import IniciarSesion from './pages/iniciarSesion';
 import { createStaticNavigation, NavigationContainer, useNavigation } from '@react-navigation/native';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Mapa from './pages/mapa';
 
@@ -17,9 +18,9 @@ function IS() {
 export default function App() {
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name='Home' component={IS} options={{headerShown: false}}/>
-        <Stack.Screen name='Mapa' component={Map} options={{headerShown: false}}/>
+      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false, animation: 'fade'}}>
+        <Stack.Screen name='Home' component={IS}/>
+        <Stack.Screen name='Mapa' component={Map}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
