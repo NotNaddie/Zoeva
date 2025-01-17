@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+
 
 const Mapa = props => {
-    <View style={{ flex:1, alignItems: 'center'}}>
-        <Text style={props.TextStyle}>Hola Mundo</Text>
+    <View style={{ flex:1, flexDirection:'column'}}>
+        <Image source={require("../assets/mapaNoDisponible.png")} style={[{width:400, borderRadius:100}]}/>
     </View>
 }
 

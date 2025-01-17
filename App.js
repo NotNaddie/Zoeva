@@ -2,14 +2,22 @@ import IniciarSesion from './pages/iniciarSesion';
 import { createStaticNavigation, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Mapa from './pages/mapa';
-import { Text, TouchableOpacity } from 'react-native';
-import './gesture-handler';
 
 const Stack = createNativeStackNavigator({
   initialRouteName: 'Home',
   screens: {
-    Home: IS,
-    Mapa: Map,
+    Home: { 
+      screen: IS,
+      options: {
+        headerShown: false
+      }
+    },
+    Mapa: { 
+      screen: Map,
+      options: {
+        headerShown: false
+      }
+    },
   },
 });
 
