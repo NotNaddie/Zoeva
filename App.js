@@ -1,25 +1,9 @@
 import IniciarSesion from './pages/iniciarSesion';
-import { createStaticNavigation, useNavigation } from '@react-navigation/native';
+import { createStaticNavigation, NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Mapa from './pages/mapa';
 
-const Stack = createNativeStackNavigator({
-  initialRouteName: 'Home',
-  screens: {
-    Home: { 
-      screen: IS,
-      options: {
-        headerShown: false
-      }
-    },
-    Mapa: { 
-      screen: Map,
-      options: {
-        headerShown: false
-      }
-    },
-  },
-});
+const Stack = createNativeStackNavigator();
 
 function Map(){
   return(<Mapa TextStyle={{fontSize:30, fontWeight: 'bold', color:'#000000'}}/>)
@@ -30,8 +14,13 @@ function IS() {
   return(<IniciarSesion AccionBoton={() => navigation.navigate('Mapa')}/>);
 }
 
-const Navigation = createStaticNavigation(Stack);
-
 export default function App() {
-  return <Navigation/>;
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name='Home' component={IS} options={{headerShown: false}}/>
+        <Stack.Screen name='Mapa' component={Map} options={{headerShown: false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
