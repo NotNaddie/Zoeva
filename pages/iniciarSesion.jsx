@@ -16,7 +16,6 @@ const IniciarSesion = props => {
                     <TextInput style={styles.TextInputs} placeholder='/User' />
                     <TextInput style={styles.TextInputs} placeholder='/Password' />
                     <Boton onP={props.AccionBoton}/>
-                    {props.children}
                 </View>
             </View>
         </View>
@@ -24,7 +23,6 @@ const IniciarSesion = props => {
 }
 
 export default IniciarSesion;
-export {styles};
 
 const styles = StyleSheet.create({
     mainContainer: {
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
         padding: 5,
         paddingStart: 10,
         elevation: 10,
-        font: 'Roboto'
+        fontFamily: 'Roboto'
     },
     LogoZoeva: {
         width: '350',

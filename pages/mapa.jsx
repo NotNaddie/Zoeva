@@ -1,12 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import BotonMapa from './BotonMapa';
 
-
-const Mapa = props => {
-    <View style={{ flex:1, flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-        <StatusBar style='auto'/>
-        <Image source={require("../assets/mapaNoDisponible.png")} style={[{width:'400', height:800, borderRadius:100}]}/>
-    </View>
+const Mapa = () => {
+    return(
+        <View style={styles.container}>
+            <BotonMapa/>
+        </View>
+    )
 }
 
-export default Mapa
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor:'#777777',
+        flex:1,
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    text: {
+        fontFamily:'Roboto',
+        fontWeight:'bold',
+        fontSize:40
+    }
+})
+
+export default Mapa;

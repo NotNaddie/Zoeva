@@ -6,10 +6,6 @@ import Mapa from './pages/mapa';
 
 const Stack = createNativeStackNavigator();
 
-function Map(){
-  return(<Mapa TextStyle={{fontSize:30, fontWeight: 'bold', color:'#000000'}}/>)
-}
-
 function IS() {
   const navigation = useNavigation();
   return(<IniciarSesion AccionBoton={() => navigation.navigate('Mapa')}/>);
@@ -20,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false, animation: 'fade'}}>
         <Stack.Screen name='Home' component={IS}/>
-        <Stack.Screen name='Mapa' component={Map}/>
+        <Stack.Screen name='Mapa' component={Mapa}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
