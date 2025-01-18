@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native';
-import BotonMapa from './BotonMapa';
+import BotonMapa from './components/BotonMapa';
 
 const Mapa = () => {
     return(
         <View style={styles.container}>
+            <View style={{height:500}}/>
             <BotonMapa/>
         </View>
     )

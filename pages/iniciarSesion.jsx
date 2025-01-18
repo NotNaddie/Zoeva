@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import Boton from './Boton';
+import Boton from './components/Boton';
 import { StyleSheet, Text, View, TextInput, Image} from 'react-native';
 
 const IniciarSesion = props => {
