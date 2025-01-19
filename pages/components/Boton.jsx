@@ -18,7 +18,7 @@ const Boton = props => {
 }
 
 export default Boton;
-export {styles};
+
 const styles = StyleSheet.create({
     Boton: {
         width: 230,

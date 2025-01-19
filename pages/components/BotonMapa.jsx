@@ -6,7 +6,8 @@ import Favorito from "./mapaBtnSvgs/favorito";
 import Recientes from "./mapaBtnSvgs/recientes";
 import Ayuda from "./mapaBtnSvgs/ayuda";
 
-const BotonMapa = () => {
+const BotonMapa = props => {
+    
     const scaleValue = new Animated.Value(110);
     const scaledRadius = new Animated.Value(55);
     const diagonalMove = new Animated.Value(-25);
@@ -97,11 +98,11 @@ const BotonMapa = () => {
                 borderRadius: scaledRadius
             }}
         >
-            <CustomSubMenuBtn SvgImg={Agregar} Op={changingOp} Accion={null} posX={normalMove} posY={25}/>
-            <CustomSubMenuBtn SvgImg={MenuLogo} Op={changingOp} Accion={null} posX={diagonalMove} posY={NdiagonalMove}/>
-            <CustomSubMenuBtn SvgImg={Recientes} Op={changingOp} Accion={null} posX={-25} posY={NnormalYMove}/>
-            <CustomSubMenuBtn SvgImg={Favorito} Op={changingOp} Accion={null} posX={NdiagVarMove} posY={NdiagonalMove}/>
-            <CustomSubMenuBtn SvgImg={Ayuda} Op={changingOp} Accion={null} posX={NnormalMove} posY={25}/>
+            <CustomSubMenuBtn SvgImg={Agregar} Op={changingOp} Accion={props.btnAgregarOp} posX={normalMove} posY={25}/>
+            <CustomSubMenuBtn SvgImg={MenuLogo} Op={changingOp} Accion={props.btnMenuOp} posX={diagonalMove} posY={NdiagonalMove}/>
+            <CustomSubMenuBtn SvgImg={Recientes} Op={changingOp} Accion={props.btnRecientesOp} posX={-25} posY={NnormalYMove}/>
+            <CustomSubMenuBtn SvgImg={Favorito} Op={changingOp} Accion={props.btnFavoritoOp} posX={NdiagVarMove} posY={NdiagonalMove}/>
+            <CustomSubMenuBtn SvgImg={Ayuda} Op={changingOp} Accion={props.btnAyudaOp} posX={NnormalMove} posY={25}/>
             <TouchableOpacity onPress={alterarEstado}>
                 <View style={
                     {

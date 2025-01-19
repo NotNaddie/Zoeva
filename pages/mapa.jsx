@@ -2,11 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Image, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import BotonMapa from './components/BotonMapa';
 
-const Mapa = () => {
+const Mapa = props => {
     return(
         <View style={styles.container}>
             <View style={{height:500}}/>
-            <BotonMapa/>
+            <BotonMapa 
+                btnAgregarOp={props.AgregarOp} 
+                btnMenuOp={props.MenuOp} 
+                btnRecientesOp={props.RecientesOp} 
+                btnFavoritoOp={props.FavoritoOp} 
+                btnAyudaOp={props.AyudaOp}/>
         </View>
     )
 }
