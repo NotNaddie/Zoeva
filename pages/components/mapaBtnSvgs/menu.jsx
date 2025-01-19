@@ -1,12 +1,11 @@
-import Svg, { Path } from 'react-native-svg';
+import Svg, { Path, Circle } from 'react-native-svg';
 
 function MenuLogo(props) {
   return (
-    <Svg width="60%" height="60%" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <Path
-        d="M10 15a5 5 180 110-10h30a5 5 180 110 10M10 30a5 5 180 110-10h30a5 5 180 110 10M10 45a5 5 180 110-10h30a5 5 180 110 10"
-        fill="#666"
-      />
+    <Svg width="80%" height="80%" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <Path d='M5 10L15 10M25 20L15 20' fill='none' stroke='#000000' strokeWidth={3}/>
+      <Circle fill='none' r={4} cx={22.5} cy={10} stroke='#000000' strokeWidth={3}/>
+      <Circle fill='none' r={4} cx={7.5} cy={20} stroke='#000000' strokeWidth={3}/>
     </Svg>
   )
 }
