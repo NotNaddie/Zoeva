@@ -47,7 +47,6 @@ const styles = StyleSheet.create({
         fontSize: 14,
         borderRadius: 20,
         borderWidth: -5,
-        
         borderColor: '#DADADA',
         backgroundColor:'#DADADA',
         borderColor: '#DADADA',

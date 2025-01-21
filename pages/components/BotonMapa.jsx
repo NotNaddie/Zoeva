@@ -1,10 +1,10 @@
 import { TouchableOpacity, View, Animated } from "react-native";
 import CustomSubMenuBtn from "./subMenuMapaBtn";
-import Agregar from './mapaBtnSvgs/agregar';
-import MenuLogo from "./mapaBtnSvgs/menu";
-import Favorito from "./mapaBtnSvgs/favorito";
-import Recientes from "./mapaBtnSvgs/recientes";
-import Ayuda from "./mapaBtnSvgs/ayuda";
+import Agregar from './svgs/agregar';
+import MenuLogo from "./svgs/menu";
+import Favorito from "./svgs/favorito";
+import Recientes from "./svgs/recientes";
+import Ayuda from "./svgs/ayuda";
 
 const BotonMapa = props => {
     
