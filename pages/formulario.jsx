@@ -1,7 +1,7 @@
 import { ScrollView, View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import ComboBox from "./components/comboBox";
+import ComboBox from "./components/ComboBox";
 
 const Formulario = props => {
     return(
