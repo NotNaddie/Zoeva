@@ -39,7 +39,7 @@ const ComboBox = props => {
     
     const StretchView = () => {
         return(
-            <View style={[props.styles, {position:'absolute', alignItems:'flex-end'}]}>
+            <View style={[props.styles, {position:'absolute', alignItems:'flex-end', flex:1, height:2000, backgroundColor:'#333333'}]}>
                 {elementosExe[0]}
             </View>
         );
