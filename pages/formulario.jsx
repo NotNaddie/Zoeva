@@ -1,6 +1,5 @@
 import { ScrollView, View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import ComboBox from "./components/ComboBox";
 
 const Formulario = props => {
@@ -10,6 +9,17 @@ const Formulario = props => {
             <View style={styles.contenedor}>
                 <Text style={styles.subtitulo}>Imformación Básica</Text>
                 <Text style={styles.texto}>Hola me llamo Oh el capitan smek es genial y el que diga lo contrario es un jugador de Lol experto nivel sayayin supremo ultrainstinto xxxtentacion skibidisigmapomni</Text>
+                <ComboBox styles={styles.comboBox} valores={['Uno', 'Dos', 'Tres', 'Cuatro']} placeHolderText='HolaPepe' arrowSize={'70%'} arrowColor={'#5588FF'} placeHolderStyle={{
+                    color:'#AAAAAA',
+                    fontFamily:'Roboto',
+                    fontSize:18,
+                    textAlign:'justify',
+                    fontWeight:'400',
+                    fontStyle:'italic',
+                    flexWrap:'wrap',
+                    flexDirection:'column',
+                    letterSpacing:1
+                }}/>
             </View>
         </VistaMain>
     );
@@ -35,6 +45,15 @@ const VistaMain = props => {
 };
 
 const styles = StyleSheet.create({
+    comboBox:{
+        backgroundColor:'#FFFFFF',
+        borderRadius:10,
+        justifyContent:'space-around',
+        alignItems:'center',
+        flex:1,
+        flexGrow:1,
+        padding:0
+    },
     texto:{
         color:'#000000',
         fontFamily:'Roboto',

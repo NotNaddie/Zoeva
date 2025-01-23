@@ -20,7 +20,7 @@ const MP = () => {
 export default function App() {
   return(
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false, animation: 'fade'}}>
+      <Stack.Navigator initialRouteName='Formulario' screenOptions={{headerShown: false, animation: 'fade'}}>
         <Stack.Screen name='Home' component={IS}/>
         <Stack.Screen name='Mapa' component={MP}/>
         <Stack.Screen name='Formulario' component={Formulario}/>
